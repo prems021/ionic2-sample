@@ -1,0 +1,44 @@
+<!--
+  Generated template for the Contacts page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PremsChat</ion-title>
+    <ion-buttons end>
+      <button (click)="con_search_click()" ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar  *ngIf="con_search_clicks"></ion-searchbar>
+
+  <ion-list [hidden]="con_search_clicks">
+       <ion-item *ngFor="let item of contactsfound">
+           {{item.displayName}}
+
+       </ion-item>
+
+       <button ion-button full (click)="create_con()"><ion-icon name="add"></ion-icon></button>
+</ion-list>
+
+  <ion-fab bottom right >
+    <button ion-fab mini  (click)="find_con()"><ion-icon name="add"></ion-icon></button>
+
+  </ion-fab>
+
+
+</ion-content>

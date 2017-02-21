@@ -1,0 +1,32 @@
+<ion-header class="head1">
+  <ion-navbar danger hideBackButton="true">
+    <ion-item no-lines class="head2">
+      <ion-avatar item-left>
+        <img src="1.jpg">
+      </ion-avatar>
+      <h2>Premji</h2>
+    </ion-item>
+    <button ion-button icon-only menuToggle (click)="takeMeBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="attach"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="header1">
+  <ion-list>
+          <ion-item class="item1"  *ngFor="let mge of messages" text-wrap>{{mge}}</ion-item>
+      </ion-list></ion-content>
+<ion-footer class="cnt1">
+  <ion-input type="text" class="in1" [(ngModel)]="msg" name="msg" placeholder="Message"></ion-input>
+  <button ion-button class="btn1" (click)="send(msg)"><ion-icon name="send"></ion-icon></button>
+</ion-footer>
